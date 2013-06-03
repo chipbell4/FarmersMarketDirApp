@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="css/reset.css" />
+<link rel="stylesheet" href="css/themes/FarmersTheme2.css" />
+<link rel="stylesheet" href="css/themes/mobileStructure.css" />
+<link rel="stylesheet" href="css/themes/custom.css" />
+<script src="js/jquery.js"></script>
+<script src="js/jquery-mobile.js"></script>
+<script src="js/mustache.js"></script>
+<script src="js/carousel.js"></script>
+<script src='js/data_cleaning.js'></script>
+<script src='js/templating.js'></script>
+<script src='js/ui.js'></script>
+<script src='js/web_service.js'></script>
+<script src="js/load.js"></script>
+<script src="js/app.js"></script>
+</head>
+<body>
+	<div data-role='page' id='index' data-theme='a' class='backgroundApples'>
+		<h1 class='header'>
+			<img src='css/themes/images/logoText.png' />
+		</h1>
+		<div class='content form' data-role='content'>
+
+			<p class='message'>Locate a farmer's market near you or around
+				the nation
+			</p>
+
+			<div class="ui-grid-a">
+				<div class="ui-block-a">&nbsp;</div>
+			</div>
+
+			<div class="ui-grid-c">
+				<div class="ui-block-a section1"></div>
+				<div class="ui-block-b section2">
+					<label for='zip'>Enter A ZIP Code:</label>
+				</div>
+				<div class="ui-block-c section3"></div>
+				<div class="ui-block-d section4"></div>
+			</div>
+			<div class="ui-grid-c">
+				<div class="ui-block-a section1"></div>
+				<div class="ui-block-b section2">
+					<input id='zip' name='zip' type='number' pattern="\d{5}"
+						data-theme='b' />
+				</div>
+				<div class="ui-block-c section3">
+					<button id='zip-search-button' href='#search-results'
+						data-icon='search' data-role='button'
+						data-theme='b'>&nbsp;</button>
+				</div>
+				<div class="ui-block-d section4"></div>
+			</div>
+			<br />
+			<div class="ui-grid-c">
+				<div class="ui-block-a section1"></div>
+				<div class="ui-block-b section2">
+					<label for='find-location'>Or Let Us</label>
+				</div>
+				<div class="ui-block-c section3"></div>
+				<div class="ui-block-d section4"></div>
+			</div>
+
+			<div class="ui-grid-b">
+				<div class="ui-block-a locationButtonsection1"></div>
+				<div class="ui-block-b locationButtonsection2">
+					<button id='geo-search-button' data-role='button'
+						href='#search-results'>Find Your Location</button>
+				</div>
+				<div class="ui-block-c locationButtonsection3"></div>
+			</div>
+		</div>
+	</div>
+	
+	<div data-role='page' data-rel='dialog' id='invalid-zip-dialog'
+		data-theme='a'>
+		<div data-role='content'>
+			<a href='#' data-rel='back' data-role='button' data-icon='arrow-l'>Back</a>
+			Invalid ZIP
+		</div>
+	</div>
+
+	<div data-role='page' id='search-results' data-theme='b'
+		class='backgroundApples'>
+		<h1 class='header'>
+			Lookup <a data-role='button' href='#index' data-icon='arrow-l'>&nbsp;</a>
+		</h1>
+		<div class="content" data-role='content'>
+			<div id='search-results-container'></div>
+		</div>
+	</div>
+
+	<!--  Templates that are invisible -->
+	<div class='templates'>
+			<div id='market-list-template'>
+				<div class='ui-grid-a'>
+					<div class='ui-block-a'>
+						<button data-icon='arrow-l' data-role='button'
+							data-iconpos='notext' class='left-button'>Left</button>
+					</div>
+					<div class='ui-block-b'>
+						<button data-icon='arrow-r' data-role='button'
+							data-iconpos='notext' class='right-button'>Right</button>
+					</div>
+				</div>
+				<div class='carousel'>
+					{{#results}}
+					<div class='carousel-item'>
+						<h3>
+							{{marketname}}
+						</h3>
+						<p class='distance-to'>{{distanceTo}} miles away</p>
+						<p class='market-details' id='market-{{id}}'>
+							<img class="loading-img" src="css/themes/images/ajax-loader.gif"/>
+						</p>
+					</div>
+					{{/results}}
+				</div>
+			</div>
+			<div id='market-info-template'>
+				<h4>Address</h4>
+				<p>{{Address}}</p>
+				<h4>Schedule</h4>
+				<p>{{Schedule}}</p>
+				<h4>Products</h4>
+				<p>{{Products}}</p>
+				<a href="{{GoogleLink}}" data-role='button'>Map It!</a> {{! Social
+				Media here }}
+			</div>
+			<div id='no-results-template'>No results found</div>
+		</div>
+</body>
+</html>
