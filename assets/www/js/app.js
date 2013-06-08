@@ -1,9 +1,8 @@
 // fix back button transition from outside apps (like maps)
-$(document).bind('mobileinit', function() {
-	$.mobile.pushStateEnabled = false;
-})
-$(document).ready(function() {
+document.addEventListener('deviceready', function() {
 	FarmersMarketSearch.Load.init(function() {
-		
+		console.log('App loaded');
+		//document.addEventListener('pause', FarmersMarketSearch.UI.pause, false); 
+		document.addEventListener('resume', FarmersMarketSearch.UI.retrieveState, false);
 	});
-});
+}, false);
