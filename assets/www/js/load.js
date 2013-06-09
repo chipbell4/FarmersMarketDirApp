@@ -14,7 +14,12 @@ FarmersMarketSearch.Load = new (function() {
 			this.loaded[ moduleName ] = false;
 			FarmersMarketSearch[ moduleName ].init();
 		}
-
-		callback();
+		
+		// initialize state database
+		FarmersMarketSearch.db = new KeyValueDatabase();
+		FarmersMarketSearch.db.initialize(function() {
+			FarmersMarketSearch.UI.retrieveState(function(){});
+			callback();
+		});
 	}
 });

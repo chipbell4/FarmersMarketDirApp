@@ -21,8 +21,9 @@ FarmersMarketSearch.UI.searchByGeo = function() {
 		FarmersMarketSearch.lat = lat;
 		FarmersMarketSearch.lng = lng;
 		FarmersMarketSearch.heading = heading;
-		$.mobile.changePage('#search-results');
-		FarmersMarketSearch.UI.getSearchResults();
+		FarmersMarketSearch.UI.saveState(function() {
+			$.mobile.changePage('#search-results');
+		});
 	}
 
 	function geoFail(error) {
@@ -44,12 +45,14 @@ FarmersMarketSearch.UI.searchByZip = function() {
 	}
 	else
 	{
+		console.log("Searching by zip");
 		FarmersMarketSearch.zip = zip;
 		FarmersMarketSearch.lat = null;
 		FarmersMarketSearch.lng = null;
 		FarmersMarketSearch.heading = null;
-		$.mobile.changePage('#search-results');
-		FarmersMarketSearch.UI.getSearchResults();
+		FarmersMarketSearch.UI.saveState(function() {
+			$.mobile.changePage('#search-results');
+		});
 	}
 }
 
@@ -75,11 +78,9 @@ FarmersMarketSearch.UI.displayError = function(jqXHR, state, error) {
 }
 
 FarmersMarketSearch.UI.getSearchResults = function() {
-	// save state
-	FarmersMarketSearch.UI.saveState();
 	
 	function isUndefined(obj) {
-		return typeof(obj) === 'undefined' || obj == null;
+		return typeof(obj) === 'undefined' || obj == null || obj == 'null' ;
 	}
 	
 	$('#search-results-container').html('<img class="loading-img" src="css/themes/images/ajax-loader.gif"/>');
@@ -89,8 +90,6 @@ FarmersMarketSearch.UI.getSearchResults = function() {
 		FarmersMarketSearch.lng,
 		FarmersMarketSearch.heading
 	];
-
-	alert(JSON.stringify(d));
 
 	if(!isUndefined(FarmersMarketSearch.zip)) {
 		FarmersMarketSearch.WebService.zipSearch(FarmersMarketSearch.zip,
@@ -104,34 +103,54 @@ FarmersMarketSearch.UI.getSearchResults = function() {
 	}
 }
 
-FarmersMarketSearch.UI.saveState = (function() {
+FarmersMarketSearch.UI.saveState = function(callback) {
 	// save app state
 	var keys = ['zip', 'lat', 'lng', 'heading'];
-	var D = {};
-	for(var k in keys) {
-		D[ keys[k] ] = FarmersMarketSearch[ keys[k] ] || null;
+	var k = 0;
+	var N = keys.length;
+	function nextCallback() {
+		if(k >= N) {
+			callback();
+			return;
+		}
+		var key = keys[k];
+		var value = FarmersMarketSearch[key];
+		console.log('Saving ' + key + ':' + value);
+		k++;
+		FarmersMarketSearch.db.save(key,value,nextCallback);
 	}
-	$('#app-state').val( JSON.stringify(D) );
-});
+	nextCallback();
+};
 
-FarmersMarketSearch.UI.retrieveState = (function() {
+FarmersMarketSearch.UI.retrieveState = function(callback) {
 	// retrieve app state
 	var keys = ['zip', 'lat', 'lng', 'heading'];
-	console.log($('#app-state').val());
-	var D = JSON.parse($('#app-state').val());
-	for(var k in keys) {
-		FarmersMarketSearch[ keys[k] ] = D[ keys[k] ]|| null;
+	var k = 0;
+	var N = keys.length;
+	function nextCallback() {
+		if(k >= N) {
+			callback();
+			return;
+		}
+		var key = keys[k];
+		k++;
+		FarmersMarketSearch.db.retrieve(key, function(val) {
+			console.log('Retrieved ' + key + ':' + val + ' (k=' + k + ')' );
+			FarmersMarketSearch[key] = val;
+			nextCallback();
+		});
 	}
 
-	FarmersMarketSearch.UI.getSearchResults();
-});
+	nextCallback();
+
+};
 
 FarmersMarketSearch.UI.init = (function() {
-	FarmersMarketSearch.UI.saveState();
-	
 	$("#zip-search-button").on('click', FarmersMarketSearch.UI.searchByZip);
 	$('#geo-search-button').on('click', FarmersMarketSearch.UI.searchByGeo);
-	$('#search-results').on('pageshow', FarmersMarketSearch.UI.retrieveState);
+	$('#search-results').on('pageshow', function() {
+		FarmersMarketSearch.UI.retrieveState(FarmersMarketSearch.UI.getSearchResults);
+	});
 	
 	FarmersMarketSearch.Load.finishedLoading('UI');
 });

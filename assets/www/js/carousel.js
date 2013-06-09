@@ -62,8 +62,8 @@ var Carousel = (function() {
 				N = marketList.length;
 			}
 			if(N > 0) {
-				$('.left-button', $carouselContainer).click(leftButtonClick);
-				$('.right-button', $carouselContainer).click(rightButtonClick);
+				$('.left-button', $carouselContainer).on('click', leftButtonClick);
+				$('.right-button', $carouselContainer).on('click', rightButtonClick);
 				rerenderCarousel();
 			}
 			else
