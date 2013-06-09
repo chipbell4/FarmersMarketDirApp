@@ -139,7 +139,7 @@ p.message
 	}
 	
 	
-	.ui-block-a.locationButtonsection1 
+.ui-block-a.locationButtonsection1 
 	{
 		width: 5%;
 	}
@@ -151,3 +151,54 @@ p.message
 	{
 		width: 5%;
 	}
+	
+.fontsizeResults
+{
+	font-size: 2em;
+}
+.left
+{
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.paddingleft
+{
+	padding-left: 145px;	
+}
+.paddingTop
+{
+	padding-top: 15px;
+}
+
+.ui-block-a.searchResults
+{
+	width:33%;
+}
+.ui-block-b.searchResults
+{
+	withd:35%;
+}
+.ui-block-c.searchResults
+{
+	withd:45%;
+}
+.ui-block-a.resultButtons
+{
+	width:20%;
+}
+.ui-block-b.resultButtons
+{
+	withd:20%;
+}
+.ui-block-c.resultButtons
+{
+	withd:20%;
+}
+.ui-block-d.resultButtons
+{
+	withd:20%;
+}
+.ui-block-e.resultButtons
+{
+	withd:20%;
+}
