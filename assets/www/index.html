@@ -50,7 +50,7 @@
 				<div class="ui-block-c section3">
 					<button id='zip-search-button' href='#search-results'
 						data-icon='search' data-role='button'
-						data-theme='b'>&nbsp;</button>
+						data-theme='a'>&nbsp;</button>
 				</div>
 				<div class="ui-block-d section4"></div>
 			</div>
@@ -85,9 +85,21 @@
 
 	<div data-role='page' id='search-results' data-theme='b'
 		class='backgroundApples'>
-		<h1 class='header'>
-			Lookup <a data-role='button' href='#index' data-icon='arrow-l'>&nbsp;</a>
-		</h1>
+			
+	<!--  	<h1 class='header fontsizeResults'> -->
+		
+		<div class='paddingTop'>
+		<div data-role="header" >
+					
+				<a href="index.html" data-icon="arrow-l">Back</a>
+			
+				<div class="paddingleft">
+					<h6 class='fontsizeResults'>Search Results</h6>
+				</div>		
+		</div>
+		</div>		
+			 		  	 
+				
 		<div class="content" data-role='content'>
 			<div id='search-results-container'></div>
 		</div>
@@ -96,14 +108,20 @@
 	<!--  Templates that are invisible -->
 	<div class='templates'>
 			<div id='market-list-template'>
-				<div class='ui-grid-a'>
-					<div class='ui-block-a'>
+				<div class='ui-grid-d'>
+					<div class='ui-block-a resultButtons'>
 						<button data-icon='arrow-l' data-role='button'
-							data-iconpos='notext' class='left-button'>Left</button>
+							data-iconpos='notext' class='left-button' data-theme='a'>Left</button>
 					</div>
-					<div class='ui-block-b'>
+					<div class='ui-block-b resultButtons'>
+					</div>	
+					<div class='ui-block-c resultButtons'>
+					</div>			
+					<div class='ui-block-d resultButtons'>
+					</div>
+					<div class='ui-block-e resultButtons'>
 						<button data-icon='arrow-r' data-role='button'
-							data-iconpos='notext' class='right-button'>Right</button>
+							data-iconpos='notext' class='right-button' data-theme='a'>Right</button>
 					</div>
 				</div>
 				<div class='carousel'>
@@ -127,7 +145,7 @@
 				<p>{{Schedule}}</p>
 				<h4>Products</h4>
 				<p>{{Products}}</p>
-				<a href="{{GoogleLink}}" data-role='button'>Map It!</a> {{! Social
+				<a href="{{GoogleLink}}" data-role='button' data-theme='a'>Map It!</a> {{! Social
 				Media here }}
 			</div>
 			<div id='no-results-template'>No results found</div>
