@@ -16,3 +16,5 @@ Things to note:
 	The first option requires using Cordova/PhoneGap to rebuild the project (which I don't really want 
 	to mess with) with a new build target (2.2 instead of 4.whatever). The second requires custom Java,
 	and mucking about with PhoneGap's internals (yuck). Maybe for another day...
+
+- For security purposes, if you need the password to the keystore, email me.
