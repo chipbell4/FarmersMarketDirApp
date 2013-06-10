@@ -27,7 +27,7 @@ FarmersMarketSearch.UI.searchByGeo = function() {
 	}
 
 	function geoFail(error) {
-		FarmersMarketSearch.UI.displayError(error);
+		alert('There was an error getting your location: ' + error.message);
 	}
 	navigator.geolocation.getCurrentPosition(geoSuccess, geoFail);
 }
@@ -40,7 +40,7 @@ FarmersMarketSearch.UI.searchByZip = function() {
 	var zipRegex = /\d{5}/;
 	var zip = $('#zip').val().trim();
 	if(!zipRegex.test(zip)) {
-		$.mobile.changePage('#invalid-zip-dialog');
+		alert('You entered an invalid ZIP code');
 		return false;
 	}
 	else
@@ -73,7 +73,7 @@ FarmersMarketSearch.UI.populateSearchResults = function(results) {
 }
 
 FarmersMarketSearch.UI.displayError = function(jqXHR, state, error) {
-	alert(error);
+	alert('The web service request had an error: ' + error);
 }
 
 FarmersMarketSearch.UI.getSearchResults = function() {
