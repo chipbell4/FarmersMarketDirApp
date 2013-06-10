@@ -45,7 +45,6 @@ FarmersMarketSearch.UI.searchByZip = function() {
 	}
 	else
 	{
-		console.log("Searching by zip");
 		FarmersMarketSearch.zip = zip;
 		FarmersMarketSearch.lat = null;
 		FarmersMarketSearch.lng = null;
@@ -115,7 +114,6 @@ FarmersMarketSearch.UI.saveState = function(callback) {
 		}
 		var key = keys[k];
 		var value = FarmersMarketSearch[key];
-		console.log('Saving ' + key + ':' + value);
 		k++;
 		FarmersMarketSearch.db.save(key,value,nextCallback);
 	}
@@ -135,7 +133,6 @@ FarmersMarketSearch.UI.retrieveState = function(callback) {
 		var key = keys[k];
 		k++;
 		FarmersMarketSearch.db.retrieve(key, function(val) {
-			console.log('Retrieved ' + key + ':' + val + ' (k=' + k + ')' );
 			FarmersMarketSearch[key] = val;
 			nextCallback();
 		});

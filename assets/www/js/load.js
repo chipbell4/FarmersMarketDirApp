@@ -16,7 +16,6 @@ FarmersMarketSearch.Load = new (function() {
 		}
 		
 		// initialize state database
-		console.log('Constructing new KeyValueDatabase, (new)');
 		FarmersMarketSearch.db = new KeyValueDatabase(1024*1024);
 		FarmersMarketSearch.db.initialize(function() {
 			FarmersMarketSearch.UI.retrieveState(function(){});

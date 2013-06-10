@@ -6,7 +6,6 @@ var FarmersMarketSearch = FarmersMarketSearch || {};
 FarmersMarketSearch.WebService = (function() {
 	var wsUrl = 'http://search.ams.usda.gov/FarmersMarkets/v1/data.svc/';
 	function callFMService(serviceMethod, serviceParams, successFn, errorFn) {
-		//console.log('Calling service with ' + JSON.stringify(serviceParams));
 		$.ajax({
 			'type': 'GET',
 			'contentType': 'application/json',

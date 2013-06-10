@@ -31,8 +31,7 @@ var KeyValueDatabase = function(size) {
 			sql += dbName + ' ';
 			sql += '(' + dbKeyColumnName + ',';
 			sql += dbValColumnName + ')';
-			tx.executeSql(sql);
-			console.log("Finished create database in db.js");
+			tx.executeSql(sql, [], function(){}, function(t,e){console.log("Database error: " + e);});
 		}
 		setWorkingState();
 		that.db.transaction(createDb, buildErrorCallback(callback), buildReadyCallback(callback));
