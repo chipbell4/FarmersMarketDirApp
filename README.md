@@ -2,11 +2,11 @@ The Farmers' Market Directory App, as presented by
 http://hackforchange.org/challenge/farmers-market-directory-local-and-regional-food-systems
 Uses PhoneGap to port JavaScript to Android
 
-Things to note:
-- In order to build on your machine, you should have a local copy of local.properties in the root 
-	directory of this project. It will have a single entry ```sdk.dir=/path/to/android/sdk/ ``` 
-	that points to the android sdk. Also, be sure to not check in builds or you local.properties file.
+All of the android junk has been removed in hopes that PhoneGap build will solve all our
+problems. This also keeps a cleaner repository, since there's no need to keep all of that
+extra stuff (since some sort of CI server should be able to do this for us, right?).
 
+Things to note:
 - This app uses HTML5 WebSQL to store application state (since PhoneGap pretty much sucks at 
 	this). However, there are some quota issues that arise for older versions of Android (2.x). 
 	To fix this issue would require some shims: 
@@ -16,5 +16,3 @@ Things to note:
 	The first option requires using Cordova/PhoneGap to rebuild the project (which I don't really want 
 	to mess with) with a new build target (2.2 instead of 4.whatever). The second requires custom Java,
 	and mucking about with PhoneGap's internals (yuck). Maybe for another day...
-
-- For security purposes, if you need the password to the keystore, email me.
