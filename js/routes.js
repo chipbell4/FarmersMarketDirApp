@@ -12,6 +12,10 @@ var FarmersMarketRouter = Backbone.Router.extend({
 	},
 	
 	searchByLatLng: function(lat, lng) {
+		this.collection = new SearchResultsCollection();
+		this.collection.setLatLng(lat, lng);
+		this.listenToOnce(this.collection, 'sync', this.fetchFinish);
+		this.collection.fetch();
 	},
 
 	searchByZip: function(zip) {
