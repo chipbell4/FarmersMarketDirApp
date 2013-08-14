@@ -1,7 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-<!-- <link rel="stylesheet" href="css/reset.css" /> -->
+<!-- Sofia look: 
+<link rel="stylesheet" href="css/sofia/style/bootstrap.css" type='text/css'/>
+<link rel="stylesheet" href="css/sofia/style/font-awesome.css">
+<link href="css/sofia/style/style.css" rel="stylesheet">
+<link href="css/sofia/style/bootstrap-responsive.css" rel="stylesheet">
+-->
+
+<!-- Below are the style sheets and stuff for mobile-first views -->
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="dist/css/bootstrap.css" media="screen"/>
+<link rel="stylesheet" href="css/sofia/style/font-awesome.css">
+<!-- Need to make this device-only style sheet-->
+
+
+<!--Use css/styleX to change different style sheets-->
+<!--<link rel="stylesheet" href="css/style.css" type='text/css'/>-->
+<!--<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">-->
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script> <!--Not too sure what this does-->
 <style>
 .templates {
 	display: none;
@@ -12,29 +29,64 @@
 <script src='js/mustache.js'></script>
 <script src='js/underscore.js'></script>
 <script src='js/backbone.js'></script>
+<script src='css/bootstrap/js/bootstrap.js'></script>
 <script src='js/routes.js'></script>
 <script src='js/models.js'></script>
 <script src='js/views.js'></script>
 <script src='js/app.js'></script>
+<!--I haven't added the bootstrap 3 js file in the js folder yet-->
+
+
 </head>
 <body>
-	<div id="page">
-	</div>
-	<div class='templates'>
+ 
+ <div class="container">
+  	<div id="page">
+	</div>    
+	<div class='templates'>  
 		<div id="search-template">
+			<div class="jumbotron">
+       		  <h1>Farmer's<span style="color: #ff0000"> Market</span> Directory</h1>
+        	  <p>Buy groceries that are<span style="color: #ff0000"> farm fresh</span>.  Visit a Farmer's Market near you!</p>
+              <p><a class="btn btn-primary btn-lg" id="geo-search">Find Farmer's Market &raquo;</a></p>
+           </div><!-- .hero-unit -->
+		 <div class="row">
+      		   <div class="span4">
+       			  <h3><i class="icon-search icon-small"></i>&nbsp;Search Zip Code</h3>
+     			    <p>Looking for a farmer's market at a <b>particular place</b>? Enter<span style="color: #ff0000"> zip code</span> below for all the farmer's market located near that area. </p>
+         		    <p><input type="search" id="zip-input" /> </p>
+     			    <p><button class="btn btn-success" type="button" id="zip-search" >Search  &raquo; &nbsp; &nbsp; &nbsp; </button></p>
+      		   </div><!-- .span4 Search Zip -->
+        	  <div class="span4">
+                 <h3><i class="icon-shopping-cart"></i>&nbsp;Find Recipes</h3>
+      			   <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh </p>
+       			   <p><a class="btn btn-warning btn-large" href="#">Find recipes &raquo;</a></p>
+              </div><!-- .span4 Find Recipes -->  
+       		  <div class="span4">
+       		    <h2><span class="icon-envelope"></span>&nbsp;Contact Us </h2>
+         		  <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+                  <p><a class="btn btn-danger btn-large" href="#">Click meeee &raquo;</a></p>
+              </div><!-- .span4 Contact Us -->
+		</div><!-- .row -->
+    <!--     
 			<label for="zip-input">Enter your zip code</label>
 			<input type="number" id="zip-input"/>
 			<button id="zip-search">Go</button>
 			Or <button id="geo-search">Search By Geo-Location</button>
-		</div>
+			
+	-->				
+	</div><!--search-template-->
 		<div id="search-results-list-template">
-			<ul>
+			<div class="panel panel-primary">
+			<div class="panel-heading "><h4>List of Farmer's Markets near Zip</h4></div>
+			<div class="list-group">
 			{{#search_results}}
-			<li class="search-result">
-				<a href='#details/{{id}}'>{{ marketname }} is {{distance}} miles away</a>
+			<li class="search-result list-group-item active">
+				<a href='#details/{{id}}'>{{ marketname }}<br><span class="badge">{{distance}} </span> miles away</a>
 			</li>	
 			{{/search_results}}
-			</ul>
+			</div>
+			</div>
 		</div>
 		<div id="details-template">
 			<!-- TODO: Replace with title -->
@@ -48,6 +100,8 @@
 			<h2>Schedule</h2>
 			<p>{{market.schedule}}</p>
 		</div>
-	</div>
+		
+	</div><!--templates -->  
+	
 </body>
 </html>
