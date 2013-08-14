@@ -42,6 +42,14 @@ var ListView = Backbone.View.extend({
 	render: function() {
 		this.$el.html(this.template({'search_results': this.collection.toJSON()}));
 	},
+
+	events: {
+		'click .back': 'back',
+	},
+
+	back: function() {
+		window.history.back();
+	},
 });
 
 var DetailsView = Backbone.View.extend({
@@ -54,5 +62,13 @@ var DetailsView = Backbone.View.extend({
 	
 	render: function() {
 		this.$el.html(this.template({'market': this.model.toJSON()}));
-	}
+	},
+
+	events: {
+		'click .back': 'back',
+	},
+
+	back: function() {
+		window.history.back();
+	},
 });
