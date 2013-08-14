@@ -44,40 +44,17 @@
   	<div id="page">
 	</div>    
 	<div class='templates'>  
+		
 		<div id="search-template">
-			<div class="jumbotron">
-       		  <h1>Farmer's<span style="color: #ff0000"> Market</span> Directory</h1>
-        	  <p>Buy groceries that are<span style="color: #ff0000"> farm fresh</span>.  Visit a Farmer's Market near you!</p>
-              <p><a class="btn btn-primary btn-lg" id="geo-search">Find Farmer's Market &raquo;</a></p>
-           </div><!-- .hero-unit -->
-		 <div class="row">
-      		   <div class="span4">
-       			  <h3><i class="icon-search icon-small"></i>&nbsp;Search Zip Code</h3>
-     			    <p>Looking for a farmer's market at a <b>particular place</b>? Enter<span style="color: #ff0000"> zip code</span> below for all the farmer's market located near that area. </p>
-         		    <p><input type="search" id="zip-input" /> </p>
-     			    <p><button class="btn btn-success" type="button" id="zip-search" >Search  &raquo; &nbsp; &nbsp; &nbsp; </button></p>
-      		   </div><!-- .span4 Search Zip -->
-        	  <div class="span4">
-                 <h3><i class="icon-shopping-cart"></i>&nbsp;Find Recipes</h3>
-      			   <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh </p>
-       			   <p><a class="btn btn-warning btn-large" href="#">Find recipes &raquo;</a></p>
-              </div><!-- .span4 Find Recipes -->  
-       		  <div class="span4">
-       		    <h2><span class="icon-envelope"></span>&nbsp;Contact Us </h2>
-         		  <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-                  <p><a class="btn btn-danger btn-large" href="#">Click meeee &raquo;</a></p>
-              </div><!-- .span4 Contact Us -->
-		</div><!-- .row -->
-    <!--     
 			<label for="zip-input">Enter your zip code</label>
 			<input type="number" id="zip-input"/>
 			<button id="zip-search">Go</button>
 			Or <button id="geo-search">Search By Geo-Location</button>
-			
-	-->				
-	</div><!--search-template-->
+		</div>
+		
 		<div id="search-results-list-template">
 			<div class="panel panel-primary">
+			<a class="back">Back</a>
 			<div class="panel-heading "><h4>List of Farmer's Markets near Zip</h4></div>
 			<div class="list-group">
 			{{#search_results}}
@@ -88,8 +65,10 @@
 			</div>
 			</div>
 		</div>
+
 		<div id="details-template">
 			<!-- TODO: Replace with title -->
+			<a class="back">Back</a>
 			<h1>Details for {{market.id}}</h1>
 			<h2>Address</h2>
 			<p>{{market.address}}</p>
@@ -101,7 +80,7 @@
 			<p>{{market.schedule}}</p>
 		</div>
 		
-	</div><!--templates -->  
+	</div>  
 	
 </body>
 </html>
