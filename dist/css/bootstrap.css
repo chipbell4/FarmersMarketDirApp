@@ -49,6 +49,7 @@ html {
 body {
   margin: 0;
   background:url('corn-vegetables-wallpapers-480x768.jpg') no-repeat center center fixed;
+ /* background-color: #f4f8e4;*/
   max-width:100%;
   height:auto;
 }
