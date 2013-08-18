@@ -66,8 +66,11 @@ display: none;
 		    <p><a href='{{market.google_link}}'>Google</a></p>
 		</address>
 		<h3 class="grid-4">Products</h3>
-		<!-- TODO: redisplay this as a nice grid list-->
-		<p class="grid-4">{{market.products}}</p>
+		<p class="grid-4">
+			{{#market.products}}
+				<span class='grid-1'>{{product}}</span>
+			{{/market.products}}
+		</p>
 		<h3 class="grid-4">Schedule</h3>
 		<p class="grid-4">{{market.schedule}}</p>
 	</div>

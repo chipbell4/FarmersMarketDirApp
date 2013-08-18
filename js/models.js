@@ -8,16 +8,20 @@ var MarketDetails = Backbone.Model.extend({
 	rebuildUrl: function() {
 		this.url = this.baseUrl + this.get('id');
 	},
-	
+
 	parse: function(response, xhr) {
 		var d = {};
 		d.address = response.marketdetails.Address;
 		d.google_link = response.marketdetails.GoogleLink;
-		// TODO: split this into an array (by semi-colon)
-		d.products = response.marketdetails.Products;
+
+		// map product to an object, so we can parse it with mustache
+		d.products = response.marketdetails.Products.split('; ').map(function(product){
+			return {'product': product};
+		});
+
 		// TODO: attempt to parse this into meaningful data
 		d.schedule = response.marketdetails.Schedule;
-		
+
 		return d;
 	}
 });
@@ -37,7 +41,7 @@ var SearchResult = Backbone.Model.extend({
 var SearchResultsCollection = Backbone.Collection.extend({
 	baseUrl: 'http://search.ams.usda.gov/FarmersMarkets/v1/data.svc',
 	model: SearchResult,
-	
+
 	// search parameters
 	setZip: function(zip) {
 		this.zip = zip;
@@ -45,14 +49,14 @@ var SearchResultsCollection = Backbone.Collection.extend({
 		this.lng = null;
 		this.url = this.baseUrl + '/zipSearch?zip='+this.zip;
 	},
-	
+
 	setLatLng: function(lat, lng) {
 		this.zip = null;
 		this.lat = lat;
 		this.lng = lng;
 		this.url = this.baseUrl + '/locSearch?lat=' + this.lat + '&lng=' + this.lng;
 	},
-	
+
 	// the service nests everything into a 'results' hash, so we'll pull it out from there
 	parse: function(response, xhr) {
 		return response.results;
