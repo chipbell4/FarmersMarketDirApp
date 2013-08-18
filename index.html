@@ -30,41 +30,46 @@ display: none;
 </head>
 <body>
 
-<div id="page">
+<div id="page" class="grid-container type sans-serif">
 </div>
 
 <div class='templates'>
 	<div id="search-template">
-		<h1>Farmer's Market Directory</h1>
-		<h3>Search Zip Code</h3>
-		<input type="search" id="zip-input" />
-		<button id="zip-search" >Search</button>
-		Or
-		<button id="geo-search">Search by Location</button>
+		<div class="grid-2 pad-left-2">
+			<h1>Farmer's Market Directory</h1>
+			<h3>Search Zip Code</h3>
+			<input type="search" id="zip-input" />
+			<button id="zip-search" >Search</button>
+			Or
+			<button id="geo-search">Search by Location</button>
+		</div>
 	</div>
 
 	<div id="search-results-list-template">
-		<a class="back">Back</a>
-		<h4>List of Farmer's Markets near Zip</h4>
-		{{#search_results}}
-		<li class="search-result list-group-item active">
-		<a href='#details/{{id}}'>{{ marketname }}<br><span class="badge">{{distance}} </span> miles away</a>
-		</li>
-		{{/search_results}}
+		<a class="back grid-1">Back</a>
+		<h3 class="grid-3">List of Farmer's Markets near Zip</h3>
+		<ul>
+			{{#search_results}}
+			<li class="search-result grid-4">
+			<a href='#details/{{id}}'>{{ marketname }} {{distance}} mi</a>
+			</li>
+			{{/search_results}}
+		</ul>
 	</div>
 
 	<div id="details-template">
 		<!-- TODO: Replace with title -->
-		<a class="back">Back</a>
-		<h1>Details for {{market.id}}</h1>
-		<h2>Address</h2>
+		<a class="back grid-1">Back</a>
+		<h2 class="grid-3">Details for {{market.id}}</h2>
+		<address class="grid-4">
 			<p>{{market.address}}</p>
 		    <p><a href='{{market.google_link}}'>Google</a></p>
-		<h2>Products</h2>
+		</address>
+		<h3 class="grid-4">Products</h3>
 		<!-- TODO: redisplay this as a nice grid list-->
-		    <p>{{market.products}}</p>
-		<h2>Schedule</h2>
-		    <p>{{market.schedule}}</p>
+		<p class="grid-4">{{market.products}}</p>
+		<h3 class="grid-4">Schedule</h3>
+		<p class="grid-4">{{market.schedule}}</p>
 	</div>
 
 </div>

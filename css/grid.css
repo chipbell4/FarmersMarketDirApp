@@ -10,15 +10,16 @@
 	width: 100%;
 }
 
-/* FIXME: Not rendering as a div, instead actualy text */
-/*.grid-container:after {
-	content: "<div style='clear:both'></div>";
-}*/
+.grid-container:after {
+	content: "";
+	display: table;
+	clear: both;
+}
 
 /*
 	All grid elements are
 */
-.grid-container .grid-1, .grid-container .grid-2, .grid-container .grid-3, .grid-container .grid-4 {
+.grid-1, .grid-2, .grid-3, .grid-4 {
 	display: inline-block;
 	margin-left: 2%;
 	margin-right: 2%;
@@ -39,4 +40,16 @@
 
 .grid-4 {
 	width: 96%;
+}
+
+.pad-left-1 {
+	margin-left: 27%;
+}
+
+.pad-left-2 {
+	margin-left: 52%;
+}
+
+.pad-left-3 {
+	margin-left: 77%;
 }

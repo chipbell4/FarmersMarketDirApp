@@ -1,24 +1,21 @@
-/*
-	Basic type
-*/
 .type {
-	font-size: 28px;
-	line-height: 1.5em;
-	max-width: 800px;
+	font-size: 14px;
+	line-height: 1.42em;
 }
 
 /*
 	Headers
 */
-.header {
+h1 {
 	font-size: 2.5em;
 }
 
-/*
-	Paragraph spacing
-*/
-.type p {
-	margin-bottom: 2em;
+h2 {
+	font-size: 2.1em;
+}
+
+h3 {
+	font-size: 1.8em;
 }
 
 /*
@@ -29,5 +26,5 @@
 }
 
 .sans-serif {
-	font-family: 'Helvetica Neue' Arial sans-serif;
+	font-family: 'Helvetica Neue', 'Roboto', Arial, sans-serif;
 }
