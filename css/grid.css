@@ -1,0 +1,42 @@
+/*
+	A Grid style sheet
+*/
+
+/*
+	The container for grid elements
+*/
+.grid-container {
+	float: left;
+	width: 100%;
+}
+
+/* FIXME: Not rendering as a div, instead actualy text */
+/*.grid-container:after {
+	content: "<div style='clear:both'></div>";
+}*/
+
+/*
+	All grid elements are
+*/
+.grid-container .grid-1, .grid-container .grid-2, .grid-container .grid-3, .grid-container .grid-4 {
+	display: inline-block;
+	margin-left: 2%;
+	margin-right: 2%;
+	float: left;
+}
+
+.grid-1 {
+	width: 21%;
+}
+
+.grid-2 {
+	width: 46%;
+}
+
+.grid-3 {
+	width: 71%;
+}
+
+.grid-4 {
+	width: 96%;
+}

@@ -1,24 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<!-- Sofia look: 
+<!-- Sofia look:
 <link rel="stylesheet" href="css/sofia/style/bootstrap.css" type='text/css'/>
 <link rel="stylesheet" href="css/sofia/style/font-awesome.css">
 <link href="css/sofia/style/style.css" rel="stylesheet">
 <link href="css/sofia/style/bootstrap-responsive.css" rel="stylesheet">
 -->
 
-<!-- Below are the style sheets and stuff for mobile-first views -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="dist/css/bootstrap.css" media="screen"/>
-<link rel="stylesheet" href="css/sofia/style/font-awesome.css">
-<!-- Need to make this device-only style sheet-->
-
-
-<!--Use css/styleX to change different style sheets-->
-<!--<link rel="stylesheet" href="css/style.css" type='text/css'/>-->
-<!--<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">-->
-<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script> <!--Not too sure what this does-->
 <style>
 .templates {
 display: none;
@@ -29,75 +18,56 @@ display: none;
 <script src='js/mustache.js'></script>
 <script src='js/underscore.js'></script>
 <script src='js/backbone.js'></script>
-<script src='css/bootstrap/js/bootstrap.js'></script>
 <script src='js/routes.js'></script>
 <script src='js/models.js'></script>
 <script src='js/views.js'></script>
 <script src='js/app.js'></script>
-<!--I haven't added the bootstrap 3 js file in the js folder yet-->
 
+<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+<link rel="stylesheet" type="text/css" href="css/grid.css"/>
+<link rel="stylesheet" type="text/css" href="css/typography.css"/>
 
 </head>
 <body>
 
-<div class="container">
-		<div id="page">
-		</div>
-</div>
-<div class='templates'>  
-		<div id="search-template">
-				<div class="hero-unit">
-						<h1>Farmer's<span style="color: #ff0000"> Market</span>	Directory
-						</h1>
-								<p>	Buy groceries that are <span style="color: #ff0000">farm fresh</span>.Visit a Farmer's Market near you!</p>
-								<p><a class="btn btn-primary btn-lg" id="geo-search">Find Farmer's Market &raquo;</a></p>
-				</div><!-- .hero-unit -->
-				<div class="row">
-				<div class="span4">
-						<h3><i class="icon-search icon-small"></i>&nbsp;Search Zip Code</h3>
-								<p>Looking for a farmer's market at a <b>particular place</b>? Enter<span style="color: #ff0000"> zip code</span> below for all the farmer's market located near that area. </p>
-								<p><input type="search" id="zip-input" /> </p>
-								<p><button class="btn btn-success" type="button" id="zip-search" >Search  &raquo; &nbsp; &nbsp; &nbsp; </button></p>
-				</div>
-				</div><!-- .row -->
-<!--     
-=======
->>>>>>> f87266e6a04523031773bb00b1488a60d9cc4e57
-<label for="zip-input">Enter your zip code</label>
-<input type="number" id="zip-input"/>
-<button id="zip-search">Go</button>
-Or <button id="geo-search">Search By Geo-Location</button>
+<div id="page">
 </div>
 
-<div id="search-results-list-template">
-<div class="panel panel-primary">
-<a class="back">Back</a>
-<div class="panel-heading "><h4>List of Farmer's Markets near Zip</h4></div>
-<div class="list-group">
-{{#search_results}}
-<li class="search-result list-group-item active">
-<a href='#details/{{id}}'>{{ marketname }}<br><span class="badge">{{distance}} </span> miles away</a>
-</li>	
-{{/search_results}}
-</div>
-</div>
-</div>
+<div class='templates'>
+	<div id="search-template">
+		<h1>Farmer's Market Directory</h1>
+		<h3>Search Zip Code</h3>
+		<input type="search" id="zip-input" />
+		<button id="zip-search" >Search</button>
+		Or
+		<button id="geo-search">Search by Location</button>
+	</div>
 
-<div id="details-template">
-<!-- TODO: Replace with title -->
-				<a class="back">Back</a>
-				<h1>Details for {{market.id}}</h1>
-				<h2>Address</h2>
-					<p>{{market.address}}</p>
-				    <p><a href='{{market.google_link}}'>Google</a></p>
-				<h2>Products</h2>
-<!-- TODO: redisplay this as a nice grid list-->
-				    <p>{{market.products}}</p>
-				<h2>Schedule</h2>
-				    <p>{{market.schedule}}</p>
-		</div><!--Search Template-->
+	<div id="search-results-list-template">
+		<a class="back">Back</a>
+		<h4>List of Farmer's Markets near Zip</h4>
+		{{#search_results}}
+		<li class="search-result list-group-item active">
+		<a href='#details/{{id}}'>{{ marketname }}<br><span class="badge">{{distance}} </span> miles away</a>
+		</li>
+		{{/search_results}}
+	</div>
 
-</div><!--Templates-->  
+	<div id="details-template">
+		<!-- TODO: Replace with title -->
+		<a class="back">Back</a>
+		<h1>Details for {{market.id}}</h1>
+		<h2>Address</h2>
+			<p>{{market.address}}</p>
+		    <p><a href='{{market.google_link}}'>Google</a></p>
+		<h2>Products</h2>
+		<!-- TODO: redisplay this as a nice grid list-->
+		    <p>{{market.products}}</p>
+		<h2>Schedule</h2>
+		    <p>{{market.schedule}}</p>
+	</div>
+
+</div>
 
 </body>
 </html>
