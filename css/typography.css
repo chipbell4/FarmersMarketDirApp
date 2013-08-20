@@ -7,13 +7,16 @@
 	Headers
 */
 h1 {
-	font-size: 2.5em;
+	font-size: 4.5em;
 }
 
 h2 {
-	font-size: 2.1em;
+	font-size: 3.1em;
 }
 
+h3 {
+	font-size: 2.8em;
+}
 h3 {
 	font-size: 1.8em;
 }
