@@ -4,9 +4,16 @@
 
 /* Background */
 
-body
+/*body
 {
 	background: #f4f8e4 url('../img/backgroung.png') no-repeat center center;
+} */
+html { 
+  background: url('../img/backgroung.png') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 /*
