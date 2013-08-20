@@ -6,7 +6,7 @@
 
 body
 {
-	background: #f4f8e4 url('../img/backgroung.png') no-repeat fixed center;
+	background: #f4f8e4 url('../img/backgroung.png') no-repeat center center;
 }
 
 /*
@@ -62,7 +62,7 @@ body
 }
 .logo-padTop
 {
-	padding-top: 90%;
+	padding-top: 40%;
 }
 
 /* Line height */
