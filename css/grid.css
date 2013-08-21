@@ -74,10 +74,15 @@ html {
 
 /* Line height */
 
-h1,h3,input,button.line
+h1
 {
 	line-height:100%
 }
+h2,h3,h4,input,button
+{
+	line-height:100%
+}
+
 /*
 .btn-custom {
   background-color: hsl(110, 56%, 26%) !important;
