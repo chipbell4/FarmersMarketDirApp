@@ -15,6 +15,9 @@ html {
   -o-background-size: cover;
   background-size: cover;
 }
+h1 {
+       font-family: 'Quicksand', 'Roboto', sans-serif;
+}
 
 /*
 	The container for grid elements
