@@ -22,7 +22,7 @@ h1 {
 
 .logo-padTop
 {
-	padding-top: 9.9 ems;
+	padding-top: 5em;
 }
 
 /* Line height */
@@ -36,6 +36,8 @@ h2,h3,h4,input,button
 	line-height:100%
 }
 
+
+/*Button1 Code */
 .myButton {
         
         -moz-box-shadow:inset 0px 1px 0px 0px #9acc85;
@@ -61,6 +63,7 @@ h2,h3,h4,input,button
         font-weight:bold;
         padding:6px 12px;
         text-decoration:none;
+        line-height: 1.4 ems;
         
     }
     .myButton:hover {
@@ -79,6 +82,8 @@ h2,h3,h4,input,button
         position:relative;
         top:1px;
     }
+    
+     Button1 Code*/
 	
 	.input {
     border: 5px solid white; 
@@ -97,8 +102,8 @@ h2,h3,h4,input,button
 	size:20px;
 }
 .input-large {
-  width: 410px;
-  height: 64px !important;
+  width: 300px;
+  height: 40px !important;
   margin-bottom: 10px !important;
   line-height: 30px !important;
   padding: 11px 19px !important;
@@ -110,8 +115,53 @@ h2,h3,h4,input,button
 }
 
 .input-large[class=input-large] {
-    width: 400px;
+    width: 300px;
 }
+
+
+
+
+
+
+/*Button 2*/
+.classname {
+	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background-color:#86b32d;
+	-webkit-border-top-left-radius:1px;
+	-moz-border-radius-topleft:1px;
+	border-top-left-radius:1px;
+	-webkit-border-top-right-radius:1px;
+	-moz-border-radius-topright:1px;
+	border-top-right-radius:1px;
+	-webkit-border-bottom-right-radius:1px;
+	-moz-border-radius-bottomright:1px;
+	border-bottom-right-radius:1px;
+	-webkit-border-bottom-left-radius:1px;
+	-moz-border-radius-bottomleft:1px;
+	border-bottom-left-radius:1px;
+	text-indent:0;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	color:#fff;
+	font-family:arial;
+	font-size:20px;
+	font-weight:bold;
+	font-style:normal;
+	height:50px;
+	line-height:50px;
+	width:300px;
+	text-decoration:none;
+	text-align:center;
+	/*text-shadow:1px 1px 0px #dfdfdf; */
+}.classname:hover {
+	background-color:#679b00;
+}.classname:active {
+	position:relative;
+	top:1px;
+}
+
 
 
 
