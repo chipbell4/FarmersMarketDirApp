@@ -102,7 +102,7 @@ h2,h3,h4,input,button
 	size:20px;
 }
 .input-large {
-  width: 300px;
+  width: 250px;
   height: 40px !important;
   margin-bottom: 10px !important;
   line-height: 30px !important;
@@ -115,7 +115,7 @@ h2,h3,h4,input,button
 }
 
 .input-large[class=input-large] {
-    width: 300px;
+    width: 260px;
 }
 
 
