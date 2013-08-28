@@ -2,22 +2,6 @@
 	A Grid style sheet
 */
 
-/* Background */
-
-/*body
-{
-	background: #f4f8e4 url('../img/backgroung.png') no-repeat center center;
-} */
-html { 
-  background: url('../img/backgroung.png') no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-h1 {
-       font-family: 'Quicksand', 'Roboto', sans-serif;
-}
 
 /*
 	The container for grid elements
@@ -70,21 +54,6 @@ h1 {
 .pad-left-3 {
 	margin-left: 77%;
 }
-.logo-padTop
-{
-	padding-top: 50%;
-}
-
-/* Line height */
-
-h1
-{
-	line-height:100%
-}
-h2,h3,h4,input,button
-{
-	line-height:100%
-}
 
 /*
 .btn-custom {
@@ -104,79 +73,3 @@ h2,h3,h4,input,button
   -webkit-font-smoothing: antialiased;
 }
 */
-.myButton {
-        
-        -moz-box-shadow:inset 0px 1px 0px 0px #9acc85;
-        -webkit-box-shadow:inset 0px 1px 0px 0px #9acc85;
-        box-shadow:inset 0px 1px 0px 0px #9acc85;
-        
-        background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #74ad5a), color-stop(1, #68a54b));
-        background:-moz-linear-gradient(top, #74ad5a 5%, #68a54b 100%);
-        background:-webkit-linear-gradient(top, #74ad5a 5%, #68a54b 100%);
-        background:-o-linear-gradient(top, #74ad5a 5%, #68a54b 100%);
-        background:-ms-linear-gradient(top, #74ad5a 5%, #68a54b 100%);
-        background:linear-gradient(to bottom, #74ad5a 5%, #68a54b 100%);
-        filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#74ad5a', endColorstr='#68a54b',GradientType=0);
-        
-        background-color:#74ad5a;
-        
-        border:1px solid #3b6e22;
-        
-        display:inline-block;
-        color:#ffffff;
-        font-family:arial;
-        font-size:40px;
-        font-weight:bold;
-        padding:6px 12px;
-        text-decoration:none;
-        
-    }
-    .myButton:hover {
-        
-        background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #68a54b), color-stop(1, #74ad5a));
-        background:-moz-linear-gradient(top, #68a54b 5%, #74ad5a 100%);
-        background:-webkit-linear-gradient(top, #68a54b 5%, #74ad5a 100%);
-        background:-o-linear-gradient(top, #68a54b 5%, #74ad5a 100%);
-        background:-ms-linear-gradient(top, #68a54b 5%, #74ad5a 100%);
-        background:linear-gradient(to bottom, #68a54b 5%, #74ad5a 100%);
-        filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#68a54b', endColorstr='#74ad5a',GradientType=0);
-        
-        background-color:#68a54b;
-    }
-    .myButton:active {
-        position:relative;
-        top:1px;
-    }
-	
-	.input {
-    border: 5px solid white; 
-    -webkit-box-shadow: 
-      inset 0 0 8px  rgba(0,0,0,0.1),
-            0 0 16px rgba(0,0,0,0.1); 
-    -moz-box-shadow: 
-      inset 0 0 8px  rgba(0,0,0,0.1),
-            0 0 16px rgba(0,0,0,0.1); 
-    box-shadow: 
-      inset 0 0 8px  rgba(0,0,0,0.1),
-            0 0 16px rgba(0,0,0,0.1); 
-    padding: 15px;
-    background: rgba(255,255,255,0.5);
-    margin: 0 0 10px 0;
-	size:20px;
-}
-.input-large {
-  width: 410px;
-  height: 64px !important;
-  margin-bottom: 10px !important;
-  line-height: 30px !important;
-  padding: 11px 19px !important;
-  font-size: 50px !important;
-  -webkit-border-radius: 6px;
-     -moz-border-radius: 6px;
-          border-radius: 6px;
-
-}
-
-.input-large[class=input-large] {
-    width: 400px;
-}
