@@ -36,6 +36,14 @@ h3 {
   font-weight: normal;
   font-style: normal;
 }
+@font-face
+{
+  font-family: "DancingScript-Regular";
+  src: url('dancing-script-ot/DancingScript-Regular.otf');
+  /*src: url('./font-awesome/fontawesome-webfont.eot?#iefix') format('eot'), url('../font-awesome/fontawesome-webfont.woff') format('woff'), url('../font-awesome/fontawesome-webfont.ttf') format('truetype'), url('../font-awesome/fontawesome-webfont.svg#FontAwesome') format('svg');*/
+  font-weight: normal;
+  font-style: normal;
+}
 
 .serif {
 	font-family: Georgia, serif;
