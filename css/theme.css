@@ -36,6 +36,23 @@ h2,h3,h4,input,button
 	line-height:100%
 }
 
+a
+{
+    outline: 0;
+    color:black;
+    text-decoration:underline;
+}
+
+a:link{
+    color:black;
+    font-size:20px;
+    line-height:0.3em;
+}
+a:visited{
+    color:#d60062;
+}
+
+
 
 /*Button1 Code */
 .myButton {
