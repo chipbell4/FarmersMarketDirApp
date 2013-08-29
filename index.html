@@ -63,11 +63,13 @@ display: none;
 
 	<div id="details-template">
 		<!-- TODO: Replace with title -->
-		<a  class="back grid-1">Back</a>
-		<h2 class="grid-3">Details for {{market.id}}</h2>
+		<h3>
+				<a style="font-family: DancingScript-Regular; color: #d60062" class="back grid-1">Back</a>
+		</h3>
+		<h2 style="font-family: DancingScript-Regular" class="grid-3">Details for {{market.id}}</h2>
 		<address class="grid-4">
 			<p>{{market.address}}</p>
-		    <p><a href='{{market.google_link}}'>Google</a></p>
+		    <p><a href='{{market.google_link}}'>Map it!</a></p>
 		</address>
 		<h3 class="grid-4">Products</h3>
 		<p class="grid-4">
