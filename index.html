@@ -51,7 +51,7 @@ display: none;
 		<h3>
 				<a style="font-family: DancingScript-Regular; color: #d60062" class="back grid-1">Back</a>
 		</h3>
-		<h3 style="font-family: DancingScript-Regular" class="grid-3">List of Farmer's Markets near Zip Code</h3>
+		<h2 style="font-family: DancingScript-Regular" class="grid-3">Farmer's Markets near Zip Code</h3>
 		<ul>
 			{{#search_results}}
 			<li class="search-result grid-2 pad-left-2 logo-padTop">
@@ -67,18 +67,21 @@ display: none;
 				<a style="font-family: DancingScript-Regular; color: #d60062" class="back grid-1">Back</a>
 		</h3>
 		<h2 style="font-family: DancingScript-Regular" class="grid-3">Details for {{market.id}}</h2>
-		<address class="grid-4">
+		<address class="grid-4 pad-left-2 logo-padTop">
+			<h3>
+			<p>Address           </p>
+			</h3>
 			<p>{{market.address}}</p>
-		    <p><a href='{{market.google_link}}'>Map it!</a></p>
+		    <p><a style="color: #d60062" href='{{market.google_link}}'>Map it!</a></p>
 		</address>
-		<h3 class="grid-4">Products</h3>
-		<p class="grid-4">
+		<h3 class="grid-4 pad-left-2">Products</h3>
+		<p >
 			{{#market.products}}
-				<span class='grid-1'>{{product}}</span>
+			<span class="grid-4 pad-left-2">{{product}} </span>
 			{{/market.products}}
 		</p>
-		<h3 class="grid-4">Schedule</h3>
-		<p class="grid-4">{{market.schedule}}</p>
+		<h3 class="grid-4 pad-left-2">Schedule</h3>
+		<p class="grid-4 pad-left-2">{{market.schedule}}</p>
 	</div>
 
 </div>
