@@ -62,6 +62,3 @@ var SearchResultsCollection = Backbone.Collection.extend({
 		return response.results;
 	},
 });
-
-marketDetails = new MarketDetails();
-marketDetails.set('id', "1006996");
