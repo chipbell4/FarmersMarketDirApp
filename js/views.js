@@ -37,10 +37,10 @@ var ListView = Backbone.View.extend({
 	initialize: function(options) {
 		this.template = Mustache.compile($(this.template).html());
 		this.collection = options.collection;
-	},	
-	
+	},
+
 	render: function() {
-		this.$el.html(this.template({'search_results': this.collection.toJSON()}));
+		this.$el.html(this.template({'search_results': this.collection.toJSON(), 'zip':this.collection.zip}));
 	},
 
 	events: {
@@ -59,7 +59,7 @@ var DetailsView = Backbone.View.extend({
 		this.template = Mustache.compile($(this.template).html());
 		this.model = options.model;
 	},
-	
+
 	render: function() {
 		this.$el.html(this.template({'market': this.model.toJSON()}));
 	},
