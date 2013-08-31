@@ -22,7 +22,11 @@ h1 {
 
 .logo-padTop
 {
-	padding-top: 5em;
+	padding-top: 1em;
+}
+.content-padTop
+{
+ 	padding-top: 10em;
 }
 
 /* Line height */
@@ -163,12 +167,12 @@ a:visited{
 	display:inline-block;
 	color:#fff;
 	font-family:arial;
-	font-size:25px;
+	font-size:60px;
 	font-weight:thin;
 	font-style:normal;
-	height:50px;
+	height:150px;
 	line-height:50px;
-	width:300px;
+	width:450px;
 	text-decoration:none;
 	text-align:center;
 	/*text-shadow:1px 1px 0px #dfdfdf; */
