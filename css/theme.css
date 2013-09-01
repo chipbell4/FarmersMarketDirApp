@@ -104,7 +104,7 @@ a:visited{
         top:1px;
     }
     
-     /*Button1 Code*/
+     /*Input box*/
 	
 	.input {
     border: 5px solid white; 
@@ -123,8 +123,8 @@ a:visited{
 	size:20px;
 }
 .input-large {
-  width: 250px;
-  height: 40px !important;
+  width: 300px;
+  height: 70px !important;
   margin-bottom: 10px !important;
   line-height: 30px !important;
   padding: 11px 19px !important;
@@ -136,7 +136,7 @@ a:visited{
 }
 
 .input-large[class=input-large] {
-    width: 260px;
+    width: 380px;
 }
 
 
