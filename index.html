@@ -54,7 +54,15 @@ display: none;
 		<h3>
 				<a style="font-family: DancingScript-Regular; color: #d60062" class="back grid-1">Back</a>
 		</h3>
-		<h2 style="font-family: DancingScript-Regular" class="grid-3">Farmer's Markets near Zip Code</h3>
+		<h2 style="font-family: DancingScript-Regular" class="grid-3">
+			Farmer's Markets near
+			{{#zip}}
+				{{zip}}
+			{{/zip}}
+			{{^zip}}
+				your location
+			{{/zip}}
+		</h3>
 		<ul>
 			{{#search_results}}
 			<li class="search-result grid-2 pad-left-2 logo-padTop">
@@ -69,7 +77,7 @@ display: none;
 		<h3>
 				<a style="font-family: DancingScript-Regular; color: #d60062" class="back grid-1">Back</a>
 		</h3>
-		<h2 style="font-family: DancingScript-Regular" class="grid-3">Details for {{market.id}}</h2>
+		<h2 style="font-family: DancingScript-Regular" class="grid-3">Details for {{market.marketname}}</h2>
 		<address class="grid-4 pad-left-2 logo-padTop">
 			<h3>
 			<p>Address           </p>
