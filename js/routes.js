@@ -8,6 +8,7 @@ var FarmersMarketRouter = Backbone.Router.extend({
 		'search/:lat,:lng': 'searchByLatLng',
 		'search/:zip': 'searchByZip',
 		'details/:market': 'marketDetails',
+		'errors/:zip': 'zipError',
 	},
 
 	/*
@@ -34,6 +35,13 @@ var FarmersMarketRouter = Backbone.Router.extend({
 	 * Callback for a zip search
 	 */
 	searchByZip: function(zip) {
+		
+		var zipCodePattern = /^\d{5}$/;
+		if (!zipCodePattern.test(zip)) {
+			window.location.hash = 'errors/' + zip;
+			return;
+		}
+		 
 		this.collection = new SearchResultsCollection();
 		this.collection.setZip(zip);
 
@@ -80,5 +88,12 @@ var FarmersMarketRouter = Backbone.Router.extend({
 	detailsRetrieved: function() {
 		var view = new DetailsView({ 'model': this.model});
 		view.render();
+	},
+	
+	/*
+	 * Sends an error if zip is invalid
+	 */
+	zipError: function(zip){
+		alert('Bad zip code');
 	}
 });
