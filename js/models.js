@@ -36,6 +36,11 @@ var MarketDetails = Backbone.Model.extend({
 		d.products = response.marketdetails.Products.split('; ').map(function(product){
 			return {'product': product};
 		});
+		
+		// clean up empty products
+		if (d.products.length == 1 && d.products[0].product == '') {
+		    d.products = [ ];
+		}
 
 		// TODO: attempt to parse this into meaningful data
 		d.schedule = response.marketdetails.Schedule;

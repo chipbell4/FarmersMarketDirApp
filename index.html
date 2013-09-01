@@ -92,6 +92,9 @@ display: none;
 			{{#market.products}}
 			<span class="grid-4 pad-left-2">{{product}} </span>
 			{{/market.products}}
+			{{^market.products}}
+			<span class="grid-4 pad-left-2">No products listed for {{market.marketname}}</span>
+		    {{/market.products}}
 		</p>
 		<h3 class="grid-4 pad-left-2">Schedule</h3>
 		<p class="grid-4 pad-left-2">{{market.schedule}}</p>

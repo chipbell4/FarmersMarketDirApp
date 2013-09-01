@@ -122,6 +122,16 @@ var DetailsView = Backbone.View.extend({
 	 * Standard rendering, using the template and model
 	 */
 	render: function() {
+		/*
+		 *{
+			'market': {
+				'marketname':'Chip',
+				'products': [],
+				'schedule': 'asdfasdf'
+			}
+		 }
+		 */
+		console.log(this.model.toJSON());
 		this.$el.html(this.template({'market': this.model.toJSON()}));
 	},
 
