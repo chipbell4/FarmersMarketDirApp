@@ -43,6 +43,7 @@ var MarketDetails = Backbone.Model.extend({
 		}
 
 		// TODO: attempt to parse this into meaningful data
+		console.log(response.marketdetails.Schedule);
 		d.schedule = response.marketdetails.Schedule;
 
 		return d;

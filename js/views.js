@@ -15,7 +15,6 @@ var SearchView = Backbone.View.extend({
 	 */
 	render: function() {
 		this.$el.html($('#search-template').html());
-		console.log("Rendering");
 	},
 
 	/*
@@ -131,7 +130,6 @@ var DetailsView = Backbone.View.extend({
 			}
 		 }
 		 */
-		console.log(this.model.toJSON());
 		this.$el.html(this.template({'market': this.model.toJSON()}));
 	},
 
