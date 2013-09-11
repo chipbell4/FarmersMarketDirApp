@@ -1,8 +1,14 @@
 .type {
 	font-size: 20px;
-	line-height: 1.42em;
+	line-height: 1em;
 }
 
+
+.bodyText
+{
+    font-size: 3em;
+    line-height: 1em;
+}
 /*
 	Headers
 */
