@@ -82,11 +82,13 @@ display: none;
 				<a style="font-family: DancingScript-Regular; color: #d60062" class="back grid-1">Back</a>
 		</h3>
 		<h2 style="font-family: DancingScript-Regular; color: #d60062" class="grid-3">{{market.marketname}}</h2>
-		<address class="grid-4  logo-padTop search-listing">
+		<address class="grid-4  logo-padTop details-listing">
 			<h3 class="logo-padTop">
 			<p>Address           </p>
 			</h3>
-			<p class="bodyText details-listing">{{market.address}}</p>
+			<h3>
+			<p class="details-listing">{{market.address}}</p>
+			</h3>
 		    <p><a style="color: #d60062;font-size: 4em" href='{{market.google_link}}'>Map it!</a></p>
 		</address>
 	<!--	<h3 class="grid-4 pad-left-2 search-listing">Products</h3> -->
@@ -107,7 +109,9 @@ display: none;
 		<h3 class="grid-4 search-listing">Schedule</h3>
 		<p class="bodyText">
 		{{#market.schedule}}
-		<span class="grid-4 details-listing">]{{market.schedule}}[</span>
+		<h3>
+		<span class="grid-4 details-listing">{{market.schedule}}</span>
+		</h3>
 		{{/market.schedule}}
 		{{^market.schedule}}
 		<span class="grid-4 details-listing">No schedule listed for {{market.marketname}}</span>
