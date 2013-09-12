@@ -211,6 +211,14 @@ a:visited{
 .search-listing
 {
  background-color: #a0cf6f;
+
+}
+.details-listing
+{
+ background-color:#f4f8e4;
+  border:1px solid black;
+  opacity:0.9;
+  filter:alpha(opacity=30);
 }
 
 .box

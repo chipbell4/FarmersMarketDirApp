@@ -67,7 +67,7 @@ display: none;
 			{{/zip}}
 			</span>
 		</h2>
-		<ul  class="search-listing grid-2 pad-left-2 ">
+		<ul  class="details-listing grid-2 pad-left-2 ">
 			{{#search_results}}
 			<li  class="search-result logo-padTop">
 				<a style="font-size: 3em; line-height: 1em" href='#details/{{id}}'>{{ marketname }} {{distance}} miles</a>
@@ -76,35 +76,41 @@ display: none;
 		</ul>
 	</div>
 
-	<div id="details-template" >
+	<div id="details-template"  >
 		<!-- TODO: Replace with title -->
 		<h3>
 				<a style="font-family: DancingScript-Regular; color: #d60062" class="back grid-1">Back</a>
 		</h3>
-		<h2 style="font-family: DancingScript-Regular; color: #d60062"" class="grid-3">{{market.marketname}}</h2>
-		<address class="grid-4 pad-left-2 logo-padTop">
+		<h2 style="font-family: DancingScript-Regular; color: #d60062" class="grid-3">{{market.marketname}}</h2>
+		<address class="grid-4  logo-padTop search-listing">
 			<h3 class="logo-padTop">
 			<p>Address           </p>
 			</h3>
-			<p class="bodyText">{{market.address}}</p>
-		    <p><a style="color: #d60062" href='{{market.google_link}}'>Map it!</a></p>
+			<p class="bodyText details-listing">{{market.address}}</p>
+		    <p><a style="color: #d60062;font-size: 4em" href='{{market.google_link}}'>Map it!</a></p>
 		</address>
-		<h3 class="grid-4 pad-left-2">Products</h3>
-		<p >
+	<!--	<h3 class="grid-4 pad-left-2 search-listing">Products</h3> -->
+	    <h3 class="grid-4 search-listing">
+		<p>Products</p>		
+		</h3>
+		<p class="bodyText" >
 			{{#market.products}}
-			<span class="grid-4 pad-left-2">{{product}} </span>
+	<!--		<span class="grid-4 pad-left-2 search-listing">{{product}} </span> -->
+		<h3>
+	        <span class="grid-4 details-listing">{{product}} </span>
+		</h3>
 			{{/market.products}}
 			{{^market.products}}
-			<span class="grid-4 pad-left-2">No products listed for {{market.marketname}}</span>
+			<span class="grid-4 pad-left-2 details-listing">No products listed for {{market.marketname}}</span>
 		    {{/market.products}}
 		</p>
-		<h3 class="grid-4 pad-left-2">Schedule</h3>
-		<p>
+		<h3 class="grid-4 search-listing">Schedule</h3>
+		<p class="bodyText">
 		{{#market.schedule}}
-		<span class="grid-4 pad-left-2">]{{market.schedule}}[</span>
+		<span class="grid-4 details-listing">]{{market.schedule}}[</span>
 		{{/market.schedule}}
 		{{^market.schedule}}
-		<span class="grid-4 pad-left-2">No schedule listed for {{market.marketname}}</span>
+		<span class="grid-4 details-listing">No schedule listed for {{market.marketname}}</span>
 		{{/market.schedule}}
 		</p>
 	</div>
